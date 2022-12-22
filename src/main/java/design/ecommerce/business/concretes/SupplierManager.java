@@ -10,9 +10,11 @@ import design.ecommerce.entities.concretes.Supplier;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SupplierManager implements SupplierService {
     private SupplierDao supplierDao;
 
