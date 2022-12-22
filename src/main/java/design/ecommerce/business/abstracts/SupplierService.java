@@ -14,8 +14,8 @@ public interface SupplierService {
     //Pagination function
     DataResult<List<Supplier>> getAll(int pageNo, int pageSize);
 
-    DataResult<List<Supplier>> getAllSortedBySupplierNameAsc();
-    DataResult<List<Supplier>> getAllSortedBySupplierNameDesc();
+    DataResult<List<Supplier>> getAllSortedByCompanyNameAsc();
+    DataResult<List<Supplier>> getAllSortedByCompanyNameDesc();
 
     DataResult<Supplier> getByCompanyName(String companyName);
     DataResult<List<Supplier>> getByCompanyNameContains(String companyName);
