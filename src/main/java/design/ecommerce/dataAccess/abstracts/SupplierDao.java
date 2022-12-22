@@ -6,10 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface SupplierDao extends JpaRepository<Supplier, Integer> {
-    Supplier getBySupplierId(String supplierId);
 
     Supplier getByCompanyName(String companyName);
-    List<Supplier> getByCompanyNameContains(String companiyName);
+    List<Supplier> getByCompanyNameContains(String companyName);
 
     Supplier getByContactName(String contactName);
     List<Supplier> getByContactNameContains(String contactName);
