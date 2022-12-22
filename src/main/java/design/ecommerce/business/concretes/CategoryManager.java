@@ -34,50 +34,55 @@ public class CategoryManager implements CategoryService {
 
     @Override
     public DataResult<List<Category>> getAll() {
-        return new SuccessDataResult<List<Category>>("Data Listelendi", this.categoryDao.findAll());
+        return new SuccessDataResult<List<Category>>("Kategoriler Listelendi", this.categoryDao.findAll());
     }
 
     @Override
     public DataResult<List<Category>> getAll(int pageNo, int pageSize) {
         Pageable pageable = PageRequest.of(pageNo, pageSize);
-        return new SuccessDataResult<List<Category>>(this.categoryDao.findAll(pageable).getContent());
+        return new SuccessDataResult<List<Category>>("Kategoriler Listelendi",
+                this.categoryDao.findAll(pageable).getContent());
     }
 
     @Override
     public DataResult<List<Category>> getAllSortedByCategoryNameAsc() {
         Sort sort = Sort.by(Sort.Direction.ASC, "categoryName");
-        return new SuccessDataResult<List<Category>>(this.categoryDao.findAll(sort));
+        return new SuccessDataResult<List<Category>>("Kategoriler Listelendi", this.categoryDao.findAll(sort));
     }
 
     @Override
     public DataResult<List<Category>> getAllSortedByCategoryNameDesc() {
         Sort sort = Sort.by(Sort.Direction.DESC, "categoryName");
-        return new SuccessDataResult<List<Category>>(this.categoryDao.findAll(sort));
+        return new SuccessDataResult<List<Category>>("Kategoriler Listelendi", this.categoryDao.findAll(sort));
     }
 
     @Override
     public DataResult<Category> getByCategoryName(String categoryName) {
-        return new SuccessDataResult<Category>(this.categoryDao.getByCategoryName(categoryName));
+        return new SuccessDataResult<Category>("Kategori Listelendi",
+                this.categoryDao.getByCategoryName(categoryName));
     }
 
     @Override
     public DataResult<List<Category>> getByCategoryNameContains(String categoryName) {
-        return new SuccessDataResult<List<Category>>(this.categoryDao.getByCategoryNameContains(categoryName));
+        return new SuccessDataResult<List<Category>>("Kategoriler Listelendi",
+                this.categoryDao.getByCategoryNameContains(categoryName));
     }
 
     @Override
     public DataResult<List<Category>> getByDescriptionContains(String description) {
-        return new SuccessDataResult<List<Category>>(this.categoryDao.getByDescriptionContains(description));
+        return new SuccessDataResult<List<Category>>("Kategoriler Listelendi",
+                this.categoryDao.getByDescriptionContains(description));
     }
 
     @Override
     public DataResult<List<Category>> getByCategoryNameContainsOrDescriptionContains(String categoryName, String description) {
-        return new SuccessDataResult<List<Category>>(this.categoryDao.
-                getByCategoryNameContainsOrDescriptionContains(categoryName, description));
+        return new SuccessDataResult<List<Category>>("Kategoriler Listelendi",
+                this.categoryDao.getByCategoryNameContainsOrDescriptionContains(categoryName, description));
     }
 
     @Override
     public DataResult<List<Category>> getByCategoryNameStartingWith(String categoryName) {
-        return new SuccessDataResult<List<Category>>(this.categoryDao.getByCategoryNameStartingWith(categoryName));
+        return new SuccessDataResult<List<Category>>("Kategoriler Listelendi",
+                this.categoryDao.getByCategoryNameStartingWith(categoryName));
     }
 }
