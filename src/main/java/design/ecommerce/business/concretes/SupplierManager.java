@@ -41,7 +41,7 @@ public class SupplierManager implements SupplierService {
 
     @Override
     public DataResult<List<Supplier>> getAll(int pageNo, int pageSize) {
-        Pageable pageable = PageRequest.of(pageNo, pageSize);
+        Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
         return new SuccessDataResult<List<Supplier>>("Tedarikçiler Listelendi",
                 this.supplierDao.findAll(pageable).getContent());
     }
