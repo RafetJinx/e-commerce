@@ -24,13 +24,13 @@ public interface ProductService {
 
     DataResult<Product> getByProductNameAndCategory_CategoryId(String productName, int categoryId);
 
-    DataResult<List<Product>> getByProductNameOrCategory_CategoryId(String productName, int categoryId);
+    DataResult<List<Product>> getByProductNameContainsIgnoreCaseAndCategory_CategoryId(String productName, int categoryId);
 
-    DataResult<List<Product>> getByCategoryIn(List<Integer> categories);
+    DataResult<List<Product>> getByCategory_CategoryId(int categoryId);
 
-    DataResult<List<Product>> getByProductNameContains(String productName);
+    DataResult<List<Product>> getByCategory_CategoryIdIn(List<Integer> categories);
 
-    DataResult<List<Product>> getByProductNameStartsWith(String productName);
+    DataResult<List<Product>> getByProductNameContainsIgnoreCase(String productName);
 
-    DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId);
+    DataResult<List<Product>> getByProductNameStartsWithIgnoreCase(String productName);
 }

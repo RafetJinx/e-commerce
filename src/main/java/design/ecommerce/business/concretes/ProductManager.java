@@ -71,32 +71,32 @@ public class ProductManager implements ProductService {
     }
 
     @Override
-    public DataResult<List<Product>> getByProductNameOrCategory_CategoryId(String productName, int categoryId) {
+    public DataResult<List<Product>> getByProductNameContainsIgnoreCaseAndCategory_CategoryId(String productName, int categoryId) {
         return new SuccessDataResult<List<Product>>("Data Listelendi",
-                this.productDao.getByProductNameOrCategory_CategoryId(productName, categoryId));
+                this.productDao.getByProductNameContainsIgnoreCaseAndCategory_CategoryId(productName, categoryId));
     }
 
     @Override
-    public DataResult<List<Product>> getByCategoryIn(List<Integer> categories) {
+    public DataResult<List<Product>> getByCategory_CategoryId(int categoryId) {
         return new SuccessDataResult<List<Product>>("Data Listelendi",
-                this.productDao.getByCategoryIn(categories));
+                this.productDao.getByCategory_CategoryId(categoryId));
     }
 
     @Override
-    public DataResult<List<Product>> getByProductNameContains(String productName) {
+    public DataResult<List<Product>> getByCategory_CategoryIdIn(List<Integer> categories) {
         return new SuccessDataResult<List<Product>>("Data Listelendi",
-                this.productDao.getByProductNameContains(productName));
+                this.productDao.getByCategory_CategoryIdIn(categories));
     }
 
     @Override
-    public DataResult<List<Product>> getByProductNameStartsWith(String productName) {
+    public DataResult<List<Product>> getByProductNameContainsIgnoreCase(String productName) {
         return new SuccessDataResult<List<Product>>("Data Listelendi",
-                this.productDao.getByProductNameStartsWith(productName));
+                this.productDao.getByProductNameContainsIgnoreCase(productName));
     }
 
     @Override
-    public DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId) {
+    public DataResult<List<Product>> getByProductNameStartsWithIgnoreCase(String productName) {
         return new SuccessDataResult<List<Product>>("Data Listelendi",
-                this.productDao.getByNameAndCategory(productName, categoryId));
+                this.productDao.getByProductNameStartsWithIgnoreCase(productName));
     }
 }
