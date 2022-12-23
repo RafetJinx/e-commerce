@@ -17,12 +17,12 @@ public interface CategoryService {
     DataResult<List<Category>> getAllSortedByCategoryNameAsc();
     DataResult<List<Category>> getAllSortedByCategoryNameDesc();
 
-    DataResult<Category> getByCategoryName(String categoryName);
-    DataResult<List<Category>> getByCategoryNameContains(String categoryName);
+    DataResult<Category> getByCategoryNameIgnoreCase(String categoryName);
+    DataResult<List<Category>> getByCategoryNameContainsIgnoreCase(String categoryName);
 
     DataResult<List<Category>> getByDescriptionContains(String description);
 
-    DataResult<List<Category>> getByCategoryNameContainsOrDescriptionContains(String categoryName, String description);
+    DataResult<List<Category>> getByCategoryNameContainsIgnoreCaseOrDescriptionContainsIgnoreCase(String categoryName, String description);
 
     DataResult<List<Category>> getByCategoryNameStartingWith(String categoryName);
 }
