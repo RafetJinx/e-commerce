@@ -64,9 +64,9 @@ public class SupplierManager implements SupplierService {
     }
 
     @Override
-    public DataResult<List<Supplier>> getByCompanyNameContains(String companyName) {
+    public DataResult<List<Supplier>> getByCompanyNameContainsIgnoreCase(String companyName) {
         return new SuccessDataResult<List<Supplier>>("Tedarikçiler Listelendi",
-                this.supplierDao.getByCompanyNameContains(companyName));
+                this.supplierDao.getByCompanyNameContainsIgnoreCase(companyName));
     }
 
     @Override
@@ -75,15 +75,15 @@ public class SupplierManager implements SupplierService {
     }
 
     @Override
-    public DataResult<List<Supplier>> getByContactTitleContains(String contactName) {
+    public DataResult<List<Supplier>> getByContactTitleContainsIgnoreCase(String contactName) {
         return new SuccessDataResult<List<Supplier>>("Tedarikçiler Listelendi",
-                this.supplierDao.getByContactTitleContains(contactName));
+                this.supplierDao.getByContactTitleContainsIgnoreCase(contactName));
     }
 
     @Override
-    public DataResult<List<Supplier>> getByAddressContains(String address) {
+    public DataResult<List<Supplier>> getByAddressContainsIgnoreCase(String address) {
         return new SuccessDataResult<List<Supplier>>("Tedarikçiler Listelendi",
-                this.supplierDao.getByAddressContains(address));
+                this.supplierDao.getByAddressContainsIgnoreCase(address));
     }
 
     @Override
@@ -92,9 +92,9 @@ public class SupplierManager implements SupplierService {
     }
 
     @Override
-    public DataResult<List<Supplier>> getByCityContains(String city) {
+    public DataResult<List<Supplier>> getByCityContainsIgnoreCase(String city) {
         return new SuccessDataResult<List<Supplier>>("Tedarikçiler Listelendi",
-                this.supplierDao.getByCityContains(city));
+                this.supplierDao.getByCityContainsIgnoreCase(city));
     }
 
     @Override
@@ -103,9 +103,9 @@ public class SupplierManager implements SupplierService {
     }
 
     @Override
-    public DataResult<List<Supplier>> getByRegionContains(String region) {
+    public DataResult<List<Supplier>> getByRegionContainsIgnoreCase(String region) {
         return new SuccessDataResult<List<Supplier>>("Tedarikçiler Listelendi",
-                this.supplierDao.getByRegionContains(region));
+                this.supplierDao.getByRegionContainsIgnoreCase(region));
     }
 
     @Override
@@ -125,9 +125,9 @@ public class SupplierManager implements SupplierService {
     }
 
     @Override
-    public DataResult<List<Supplier>> getByCountryContains(String country) {
+    public DataResult<List<Supplier>> getByCountryContainsIgnoreCase(String country) {
         return new SuccessDataResult<List<Supplier>>("Tedarikçiler Listelendi",
-                this.supplierDao.getByCountryContains(country));
+                this.supplierDao.getByCountryContainsIgnoreCase(country));
     }
 
     @Override
@@ -146,15 +146,15 @@ public class SupplierManager implements SupplierService {
     }
 
     @Override
-    public DataResult<List<Supplier>> getByCityContainsAndCountryContains(String city, String country) {
+    public DataResult<List<Supplier>> getByCityContainsIgnoreCaseAndCountryContainsIgnoreCase(String city, String country) {
         return new SuccessDataResult<List<Supplier>>("Tedarikçiler Listelendi",
-                this.supplierDao.getByCityContainsAndCountryContains(city, country));
+                this.supplierDao.getByCityContainsIgnoreCaseAndCountryContainsIgnoreCase(city, country));
     }
 
     @Override
-    public DataResult<List<Supplier>> getByCityContainsAndCountryContainsAndRegionContains
+    public DataResult<List<Supplier>> getByCityContainsIgnoreCaseAndCountryContainsIgnoreCaseAndRegionContainsIgnoreCase
             (String city, String county, String region) {
         return new SuccessDataResult<List<Supplier>>("Tedarikçiler Listelendi",
-                this.supplierDao.getByCityContainsAndCountryContainsAndRegionContains(city, county, region));
+                this.supplierDao.getByCityContainsIgnoreCaseAndCountryContainsIgnoreCaseAndRegionContainsIgnoreCase(city, county, region));
     }
 }

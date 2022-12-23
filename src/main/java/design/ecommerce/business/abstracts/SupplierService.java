@@ -18,24 +18,24 @@ public interface SupplierService {
     DataResult<List<Supplier>> getAllSortedByCompanyNameDesc();
 
     DataResult<Supplier> getByCompanyName(String companyName);
-    DataResult<List<Supplier>> getByCompanyNameContains(String companyName);
+    DataResult<List<Supplier>> getByCompanyNameContainsIgnoreCase(String companyName);
 
     DataResult<Supplier> getByContactTitle(String contactTitle);
-    DataResult<List<Supplier>> getByContactTitleContains(String contactName);
+    DataResult<List<Supplier>> getByContactTitleContainsIgnoreCase(String contactName);
 
-    DataResult<List<Supplier>> getByAddressContains(String address);
+    DataResult<List<Supplier>> getByAddressContainsIgnoreCase(String address);
 
     DataResult<Supplier> getByCity(String city);
-    DataResult<List<Supplier>> getByCityContains(String city);
+    DataResult<List<Supplier>> getByCityContainsIgnoreCase(String city);
 
     DataResult<Supplier> getByRegion(String region);
-    DataResult<List<Supplier>> getByRegionContains(String region);
+    DataResult<List<Supplier>> getByRegionContainsIgnoreCase(String region);
 
     DataResult<Supplier> getByPostalCode(String postalCode);
     DataResult<List<Supplier>> getByPostalCodeContains(String postalCode);
 
     DataResult<Supplier> getByCountry(String country);
-    DataResult<List<Supplier>> getByCountryContains(String country);
+    DataResult<List<Supplier>> getByCountryContainsIgnoreCase(String country);
 
     DataResult<Supplier> getByPhone(String phone);
 
@@ -43,6 +43,6 @@ public interface SupplierService {
 
     DataResult<Supplier> getByHomepage(String homepage);
 
-    DataResult<List<Supplier>> getByCityContainsAndCountryContains(String city, String country);
-    DataResult<List<Supplier>> getByCityContainsAndCountryContainsAndRegionContains(String city, String county, String region);
+    DataResult<List<Supplier>> getByCityContainsIgnoreCaseAndCountryContainsIgnoreCase(String city, String country);
+    DataResult<List<Supplier>> getByCityContainsIgnoreCaseAndCountryContainsIgnoreCaseAndRegionContainsIgnoreCase(String city, String country, String region);
 }

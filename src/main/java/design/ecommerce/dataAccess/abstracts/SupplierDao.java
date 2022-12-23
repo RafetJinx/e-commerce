@@ -8,27 +8,27 @@ import java.util.List;
 public interface SupplierDao extends JpaRepository<Supplier, Integer> {
 
     Supplier getByCompanyName(String companyName);
-    List<Supplier> getByCompanyNameContains(String companyName);
+    List<Supplier> getByCompanyNameContainsIgnoreCase(String companyName);
 
     Supplier getByContactName(String contactName);
-    List<Supplier> getByContactNameContains(String contactName);
+    List<Supplier> getByContactNameContainsIgnoreCase(String contactName);
 
     Supplier getByContactTitle(String contactTitle);
-    List<Supplier> getByContactTitleContains(String contactName);
+    List<Supplier> getByContactTitleContainsIgnoreCase(String contactName);
 
-    List<Supplier> getByAddressContains(String address);
+    List<Supplier> getByAddressContainsIgnoreCase(String address);
 
     Supplier getByCity(String city);
-    List<Supplier> getByCityContains(String city);
+    List<Supplier> getByCityContainsIgnoreCase(String city);
 
     Supplier getByRegion(String region);
-    List<Supplier> getByRegionContains(String region);
+    List<Supplier> getByRegionContainsIgnoreCase(String region);
 
     Supplier getByPostalCode(String postalCode);
     List<Supplier> getByPostalCodeContains(String postalCode);
 
     Supplier getByCountry(String country);
-    List<Supplier> getByCountryContains(String country);
+    List<Supplier> getByCountryContainsIgnoreCase(String country);
 
     Supplier getByPhone(String phone);
 
@@ -36,8 +36,8 @@ public interface SupplierDao extends JpaRepository<Supplier, Integer> {
 
     Supplier getByHomepage(String homepage);
 
-    List<Supplier> getByCityContainsAndCountryContains(String city, String country);
-    List<Supplier> getByCityContainsAndCountryContainsAndRegionContains(String city, String county, String region);
+    List<Supplier> getByCityContainsIgnoreCaseAndCountryContainsIgnoreCase(String city, String country);
+    List<Supplier> getByCityContainsIgnoreCaseAndCountryContainsIgnoreCaseAndRegionContainsIgnoreCase(String city, String county, String region);
 
 //    SELECT COUNT(p.product_id), s.company_name
 //    FROM suppliers as s
