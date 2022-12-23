@@ -1,6 +1,7 @@
 package design.ecommerce.entities.concretes;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,10 +23,12 @@ public class Product {
     @Column(name = "product_id")
     private int id;
 
+    @JsonBackReference
     @ManyToOne()
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;
 
+    @JsonBackReference
     @ManyToOne()
     @JoinColumn(name = "category_id")
     private Category category;
@@ -37,7 +40,7 @@ public class Product {
     private String quantityPerUnit;
 
     @Column(name = "unit_price")
-    private Double unitPrice;
+    private double unitPrice;
 
     @Column(name = "units_in_stock")
     private int unitsInStock;
@@ -50,5 +53,4 @@ public class Product {
 
     @Column(name = "discontinued")
     private int discontinued;
-
 }
