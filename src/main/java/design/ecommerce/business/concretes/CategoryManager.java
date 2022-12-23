@@ -41,7 +41,7 @@ public class CategoryManager implements CategoryService {
 
     @Override
     public DataResult<List<Category>> getAll(int pageNo, int pageSize) {
-        Pageable pageable = PageRequest.of(pageNo, pageSize);
+        Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
         return new SuccessDataResult<List<Category>>("Kategoriler Listelendi",
                 this.categoryDao.findAll(pageable).getContent());
     }
@@ -59,15 +59,15 @@ public class CategoryManager implements CategoryService {
     }
 
     @Override
-    public DataResult<Category> getByCategoryName(String categoryName) {
+    public DataResult<Category> getByCategoryNameIgnoreCase(String categoryName) {
         return new SuccessDataResult<Category>("Kategori Listelendi",
-                this.categoryDao.getByCategoryName(categoryName));
+                this.categoryDao.getByCategoryNameIgnoreCase(categoryName));
     }
 
     @Override
-    public DataResult<List<Category>> getByCategoryNameContains(String categoryName) {
+    public DataResult<List<Category>> getByCategoryNameContainsIgnoreCase(String categoryName) {
         return new SuccessDataResult<List<Category>>("Kategoriler Listelendi",
-                this.categoryDao.getByCategoryNameContains(categoryName));
+                this.categoryDao.getByCategoryNameContainsIgnoreCase(categoryName));
     }
 
     @Override
@@ -77,9 +77,9 @@ public class CategoryManager implements CategoryService {
     }
 
     @Override
-    public DataResult<List<Category>> getByCategoryNameContainsOrDescriptionContains(String categoryName, String description) {
+    public DataResult<List<Category>> getByCategoryNameContainsIgnoreCaseOrDescriptionContainsIgnoreCase(String categoryName, String description) {
         return new SuccessDataResult<List<Category>>("Kategoriler Listelendi",
-                this.categoryDao.getByCategoryNameContainsOrDescriptionContains(categoryName, description));
+                this.categoryDao.getByCategoryNameContainsIgnoreCaseOrDescriptionContainsIgnoreCase(categoryName, description));
     }
 
     @Override
