@@ -8,7 +8,6 @@ import java.util.List;
 
 public interface SupplierService {
     Result addSupplier(Supplier supplier);
-    Result deleteSupplier(Supplier supplier);
 
     DataResult<List<Supplier>> getAll();
     //Pagination function
@@ -16,6 +15,8 @@ public interface SupplierService {
 
     DataResult<List<Supplier>> getAllSortedByCompanyNameAsc();
     DataResult<List<Supplier>> getAllSortedByCompanyNameDesc();
+
+    DataResult<Integer> deleteBySupplierId(int supplierId);
 
     DataResult<Supplier> getByCompanyName(String companyName);
     DataResult<List<Supplier>> getByCompanyNameContainsIgnoreCase(String companyName);

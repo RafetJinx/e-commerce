@@ -28,11 +28,6 @@ public class SupplierManager implements SupplierService {
         return new SuccessResult("Tedarikçi Eklendi");
     }
 
-    @Override
-    public Result deleteSupplier(Supplier supplier) {
-        this.supplierDao.delete(supplier);
-        return new SuccessResult("Tedarikçi Silindi");
-    }
 
     @Override
     public DataResult<List<Supplier>> getAll() {
@@ -56,6 +51,11 @@ public class SupplierManager implements SupplierService {
     public DataResult<List<Supplier>> getAllSortedByCompanyNameDesc() {
         Sort sort = Sort.by(Sort.Direction.DESC, "companyName");
         return new SuccessDataResult<List<Supplier>>("Tedarikçiler Listelendi", this.supplierDao.findAll(sort));
+    }
+
+    @Override
+    public DataResult<Integer> deleteBySupplierId(int supplierId) {
+        return new SuccessDataResult<Integer>("Tedarikçi Silindi", this.supplierDao.deleteBySupplierId(supplierId));
     }
 
     @Override
