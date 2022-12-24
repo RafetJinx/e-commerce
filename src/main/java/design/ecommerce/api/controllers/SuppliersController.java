@@ -24,11 +24,6 @@ public class SuppliersController {
         return this.supplierService.addSupplier(supplier);
     }
 
-    @DeleteMapping(value = "/delete")
-    Result deleteSupplier(@RequestBody Supplier supplier){
-        return this.supplierService.deleteSupplier(supplier);
-    }
-
     @GetMapping(value = "/getAll")
     DataResult<List<Supplier>> getAll(){
         return this.supplierService.getAll();
