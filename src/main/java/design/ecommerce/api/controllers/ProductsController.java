@@ -24,11 +24,6 @@ public class ProductsController {
         return this.productService.add(product);
     }
 
-    @DeleteMapping(value = "/delete")
-    public Result delete(@RequestBody Product product){
-        return this.productService.delete(product);
-    }
-
     @GetMapping(value = "/getAll")
     public DataResult<List<Product>> getAll(){
         return this.productService.getAll();
@@ -49,6 +44,10 @@ public class ProductsController {
         return this.productService.getAllSortedByProductNameDesc();
     }
 
+    @DeleteMapping(value = "/deleteById")
+    DataResult<Integer> deleteById(@RequestParam int id){
+        return this.productService.deleteById(id);
+    }
     @GetMapping(value = "/getByProductName")
     public DataResult<Product> getByProductName(@RequestParam String productName){
         return this.productService.getByProductName(productName);

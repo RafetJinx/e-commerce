@@ -9,8 +9,6 @@ import java.util.List;
 public interface ProductService {
     Result add(Product product);
 
-    Result delete(Product product);
-
     DataResult<List<Product>> getAll();
 
     //Pagination function
@@ -19,6 +17,7 @@ public interface ProductService {
     DataResult<List<Product>> getAllSortedByProductNameAsc();
 
     DataResult<List<Product>> getAllSortedByProductNameDesc();
+    DataResult<Integer> deleteById(int id);
 
     DataResult<Product> getByProductName(String productName);
 
