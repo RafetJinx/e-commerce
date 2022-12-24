@@ -44,6 +44,11 @@ public class SuppliersController {
         return this.supplierService.getAllSortedByCompanyNameDesc();
     }
 
+    @DeleteMapping(value = "/deleteBySupplierId")
+    DataResult<Integer> deleteBySupplierId(@RequestParam int supplierId){
+        return this.supplierService.deleteBySupplierId(supplierId);
+    }
+
     @GetMapping(value = "/getByCompanyName")
     DataResult<Supplier> getByCompanyName(@RequestParam String companyName){
         return this.supplierService.getByCompanyName(companyName);
