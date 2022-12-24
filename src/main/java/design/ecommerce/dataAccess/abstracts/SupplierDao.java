@@ -2,10 +2,16 @@ package design.ecommerce.dataAccess.abstracts;
 
 import design.ecommerce.entities.concretes.Supplier;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Repository
 public interface SupplierDao extends JpaRepository<Supplier, Integer> {
+
+    @Transactional
+    Integer deleteBySupplierId(int supplierId);
 
     Supplier getByCompanyName(String companyName);
     List<Supplier> getByCompanyNameContainsIgnoreCase(String companyName);

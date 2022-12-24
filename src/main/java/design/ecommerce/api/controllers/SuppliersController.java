@@ -24,11 +24,6 @@ public class SuppliersController {
         return this.supplierService.addSupplier(supplier);
     }
 
-    @DeleteMapping(value = "/delete")
-    Result deleteSupplier(@RequestBody Supplier supplier){
-        return this.supplierService.deleteSupplier(supplier);
-    }
-
     @GetMapping(value = "/getAll")
     DataResult<List<Supplier>> getAll(){
         return this.supplierService.getAll();
@@ -47,6 +42,11 @@ public class SuppliersController {
     @GetMapping(value = "/getAllSortedByCompanyNameDesc")
     DataResult<List<Supplier>> getAllSortedByCompanyNameDesc(){
         return this.supplierService.getAllSortedByCompanyNameDesc();
+    }
+
+    @DeleteMapping(value = "/deleteBySupplierId")
+    DataResult<Integer> deleteBySupplierId(@RequestParam int supplierId){
+        return this.supplierService.deleteBySupplierId(supplierId);
     }
 
     @GetMapping(value = "/getByCompanyName")
