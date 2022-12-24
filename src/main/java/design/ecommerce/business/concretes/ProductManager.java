@@ -31,12 +31,6 @@ public class ProductManager implements ProductService {
     }
 
     @Override
-    public Result delete(Product product) {
-        this.productDao.delete(product);
-        return new SuccessResult("Ürün silindi");
-    }
-
-    @Override
     public DataResult<List<Product>> getAll() {
         return new SuccessDataResult<List<Product>>("Data Listelendi", this.productDao.findAll());
     }
@@ -57,6 +51,11 @@ public class ProductManager implements ProductService {
     public DataResult<List<Product>> getAllSortedByProductNameDesc() {
         Sort sort = Sort.by(Sort.Direction.DESC, "productName");
         return new SuccessDataResult<List<Product>>("Listeleme Başarılı", this.productDao.findAll(sort));
+    }
+
+    @Override
+    public DataResult<Integer> deleteById(int id) {
+        return new SuccessDataResult<Integer>("Ürün Silindi", this.productDao.deleteById(id));
     }
 
     @Override
