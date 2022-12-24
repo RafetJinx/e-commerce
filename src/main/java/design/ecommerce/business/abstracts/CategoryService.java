@@ -8,7 +8,6 @@ import java.util.List;
 
 public interface CategoryService {
     Result addCategory(Category category);
-    Result deleteCategory(Category category);
 
     DataResult<List<Category>> getAll();
     //Pagination function
@@ -16,6 +15,8 @@ public interface CategoryService {
 
     DataResult<List<Category>> getAllSortedByCategoryNameAsc();
     DataResult<List<Category>> getAllSortedByCategoryNameDesc();
+
+    DataResult<Integer> deleteByCategoryId(int id);
 
     DataResult<Category> getByCategoryNameIgnoreCase(String categoryName);
     DataResult<List<Category>> getByCategoryNameContainsIgnoreCase(String categoryName);

@@ -3,7 +3,6 @@ package design.ecommerce.api.controllers;
 import design.ecommerce.business.abstracts.CategoryService;
 import design.ecommerce.core.utilities.results.Result;
 import design.ecommerce.core.utilities.results.dataResult.DataResult;
-import design.ecommerce.dataAccess.abstracts.CategoryDao;
 import design.ecommerce.entities.concretes.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,11 +25,6 @@ public class CategoriesController {
         return this.categoryService.addCategory(category);
     }
 
-    @DeleteMapping(value = "/delete")
-    Result deleteCategory(@RequestBody Category category){
-        return this.categoryService.deleteCategory(category);
-    }
-
     @GetMapping(value = "/getAll")
     DataResult<List<Category>> getAll(){
         return this.categoryService.getAll();
@@ -47,6 +41,11 @@ public class CategoriesController {
     @GetMapping(value = "/getAllSortedByCategoryNameDesc")
     DataResult<List<Category>> getAllSortedByCategoryNameDesc(){
         return this.categoryService.getAllSortedByCategoryNameDesc();
+    }
+
+    @DeleteMapping(value = "/deleteByCategoryId")
+    DataResult<Integer> deleteByCategoryId(@RequestParam int id){
+        return this.categoryService.deleteByCategoryId(id);
     }
 
     @GetMapping(value = "/getByCategoryName")

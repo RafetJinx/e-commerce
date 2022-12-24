@@ -29,12 +29,6 @@ public class CategoryManager implements CategoryService {
     }
 
     @Override
-    public Result deleteCategory(Category category) {
-        this.categoryDao.delete(category);
-        return new SuccessResult("Kategori silindi");
-    }
-
-    @Override
     public DataResult<List<Category>> getAll() {
         return new SuccessDataResult<List<Category>>("Kategoriler Listelendi", this.categoryDao.findAll());
     }
@@ -56,6 +50,11 @@ public class CategoryManager implements CategoryService {
     public DataResult<List<Category>> getAllSortedByCategoryNameDesc() {
         Sort sort = Sort.by(Sort.Direction.DESC, "categoryName");
         return new SuccessDataResult<List<Category>>("Kategoriler Listelendi", this.categoryDao.findAll(sort));
+    }
+
+    @Override
+    public DataResult<Integer> deleteByCategoryId(int id) {
+        return new SuccessDataResult<Integer>("Kategori Silindi", this.categoryDao.deleteByCategoryId(id));
     }
 
     @Override
